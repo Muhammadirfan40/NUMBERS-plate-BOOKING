@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import logo from "../../Images/Logo.png";
 import Backgroundimg from "../../Component/Backgroundimg/Backgroundimg"
-import NewToday from '../NewToday/NewToday';
+import NewToday from '../../Pages/NewToday/NewToday';
+import Ourservices from '../OurServices/Ourservices';
+import Feedbackus from '../Feedbackus/Feedbackus';
 
 const HomePage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -104,6 +106,7 @@ const HomePage = () => {
 
 
                 <div className="relative">
+
                     {/* Background Image */}
                     <Backgroundimg />
 
@@ -132,9 +135,12 @@ const HomePage = () => {
                             </a>
                         </div>
                     </div>
+
                 </div>
 
                 <NewToday />
+                <Ourservices />
+                <Feedbackus />
 
             </div>
 
