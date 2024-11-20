@@ -23,21 +23,23 @@ const HomePage = () => {
         <>
             <div className='px-4 bg-gray-300'>
 
-                <nav className="bg-gray-300 p-4">
-                    <div className="max-w-7xl mx-auto flex items-center justify-between">
+                <nav className=" py-4">
+
+                    <div className="sm:flex  flex items-center justify-between">
 
                         {/* Logo */}
-                        <div className="h-28 w-64">
+                        <div className=" md:h-28 md:w-64">
                             <img src={logo} alt="logo" className='' />
                         </div>
 
-                        <div className='flex md:flex-col gap-2 mt-12'>
+                        <div className=' flex sm:flex-col-reverse md:flex-col gap-2 md:mt-12'>
+
                             {/* Desktop Menu */}
                             <div className="hidden md:flex gap-4 md:ga text-black text-3xl font-normal">
                                 <a href="#">NORMAL</a>
-                                <a href="#about" >SELVER</a>
-                                <a href="#services" >GOLDEN</a>
-                                <a href="#contact" >VIP</a>
+                                <a href="#a" >SELVER</a>
+                                <a href="#" >GOLDEN</a>
+                                <a href="#" >VIP</a>
 
 
                                 {/* Category Dropdown */}
@@ -68,7 +70,7 @@ const HomePage = () => {
                             </div>
 
                             {/* Search Input */}
-                            <div className="relative mt-2 md:mt-0">
+                            <div className="relative  md:mt-0">
                                 <input
                                     type="text"
                                     placeholder="Search..."
@@ -78,46 +80,79 @@ const HomePage = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M11 4a7 7 0 017 7 7 7 0 01-7 7 7 7 0 01-7-7 7 7 0 017-7zM14 14l4 4" />
                                 </svg>
                             </div>
+
+                            {/* Hamburger Icon */}
+                            <div className="md:hidden flex items-center">
+                                <button onClick={toggleMenu} className="text-white focus:outline-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                </button>
+                            </div>
+
+
                         </div>
 
-                        {/* Hamburger Icon */}
-                        <div className="md:hidden flex items-center">
-                            <button onClick={toggleMenu} className="text-white focus:outline-none">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
-                            </button>
-                        </div>
 
-                        <div className='flex md:flex-col gap-2'>
 
-                            <div className='flex gap-6 mt-2 mb-8 justify-center'>
+                        <div className='flex md:flex-col gap-2 sm:flex-col'>
+
+                            <div className='flex gap-6 mt-2 md:mb-8 justify-end'>
                                 <button className='border border-black rounded text-center items-center text-xl font-semibold px-2 py-1  '>SELL +</button>
                                 <button className=' rounded text-center items-center text-xl font-semibold px-2 py-1 bg-yellow-300'>Order</button>
                             </div>
 
-                            <div className='flex gap-4 justify-between'>
-                                <button>  <i class="ri-heart-3-line text-4xl"></i></button>
-                                <button><i class="ri-notification-line text-4xl "></i></button>
-                                <button> <i class="ri-mail-fill  text-4xl "></i></button>
-                                <Link to="/loginpage" className='rounded border-black text-xl  py-2 px-3 bg-white'>Sign In</Link>
+                            <div className='flex gap-4 justify-between sm:flex-col'>
+
+                                <div>
+                                    <button>  <i class="ri-heart-3-line text-4xl"></i></button>
+                                    <button><i class="ri-notification-line text-4xl "></i></button>
+                                    <button> <i class="ri-mail-fill  text-4xl "></i></button>
+                                </div>
+
+                                <div>
+                                    <Link to="/loginpage" className='rounded border-black text-xl  py-2 px-3 bg-white'>Sign In</Link>
+                                </div>
+
                             </div>
 
                         </div>
-
-
 
                     </div>
 
                     {/* Mobile Menu */}
                     {isMenuOpen && (
-                        <div className="md:hidden bg-gray-800 p-4 space-y-4">
-                            <a href="#" className="text-white hover:text-gray-400">Home</a>
-                            <a href="#about" className="text-white hover:text-gray-400">About</a>
-                            <a href="#services" className="text-white hover:text-gray-400">Services</a>
-                            <a href="#contact" className="text-white hover:text-gray-400">Contact</a>
+                        <div className="md:hidden bg-gray-800 p-4 flex flex-col gap-2">
+                            <a href="#" className="text-white hover:text-gray-400">NORMAL</a>
+                            <a href="#a" className="text-white hover:text-gray-400">SELVER</a>
+                            <a href="#" className="text-white hover:text-gray-400">GOLDEN</a>
+                            <a href="#" className="text-white hover:text-gray-400">VIP</a>
+                            <div>
+                                <button
+                                    onClick={toggleCategoryDropdown}
+                                    className="text-white flex items-center gap-2"
+                                >
+                                    CATEGORY
+                                    <i className={`ri-arrow-down-s-line text-lg transform ${isCategoryOpen ? 'rotate-180' : ''}`}></i>
+                                </button>
+                                {isCategoryOpen && (
+                                    <div className="mt-2 space-y-2">
+                                        <a href="#category1" className="block text-gray-400 hover:text-white">
+                                            Category 1
+                                        </a>
+                                        <a href="#category2" className="block text-gray-400 hover:text-white">
+                                            Category 2
+                                        </a>
+                                        <a href="#category3" className="block text-gray-400 hover:text-white">
+                                            Category 3
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     )}
+
+
                 </nav>
 
 

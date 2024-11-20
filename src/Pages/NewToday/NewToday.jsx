@@ -54,7 +54,7 @@ function NewToday() {
 
                     <Newtodaybgimg />
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8 px-2 absolute top-0 left-0 w-full h-full">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 py-8 px-2 absolute top-0 left-0 ">
 
                         {plateData.map((plate) => (
                             <div key={plate.id} className="bg-yellow-400 rounded-lg shadow-lg p-4">
