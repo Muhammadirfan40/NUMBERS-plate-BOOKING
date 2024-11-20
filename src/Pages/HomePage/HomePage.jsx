@@ -23,7 +23,7 @@ const HomePage = () => {
         <>
             <div className='px-4 bg-gray-300'>
 
-                <nav className=" py-4">
+                <nav className=" pt-4 pb-1">
 
                     <div className="sm:flex  flex items-center justify-between">
 
@@ -95,14 +95,14 @@ const HomePage = () => {
 
 
 
-                        <div className='flex md:flex-col gap-2 sm:flex-col'>
+                        <div className='flex md:flex-col md:gap-0 sm:gap-2 sm:flex-col'>
 
-                            <div className='flex gap-6 mt-2 md:mb-8 justify-end'>
+                            <div className='flex gap-6 mt-2 md:mb-6 justify-end'>
                                 <button className='border border-black rounded text-center items-center text-xl font-semibold px-2 py-1  '>SELL +</button>
-                                <button className=' rounded text-center items-center text-xl font-semibold px-2 py-1 bg-yellow-300'>Order</button>
+                                <button className=' rounded text-center items-center text-xl font-semibold px-2 py-1 bg-[#D4FF00]'>Order</button>
                             </div>
 
-                            <div className='flex gap-4 justify-between sm:flex-col'>
+                            <div className='flex gap-4 justify-between sm:flex-col md:flex-row md:items-center'>
 
                                 <div>
                                     <button>  <i class="ri-heart-3-line text-4xl"></i></button>
