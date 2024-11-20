@@ -5,7 +5,7 @@ function Backgroundimg() {
     return (
         <>
             <div
-                className="h-screen bg-cover bg-center"
+                className="h-screen bg-cover bg-center rounded"
                 style={{
                     backgroundImage: `url(${bgimage})`,
                     backgroundSize: 'cover',  // Ensures the image covers the container

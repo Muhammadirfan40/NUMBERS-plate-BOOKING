@@ -4,7 +4,7 @@ import ourser from "../../Images/ourser.jpeg";
 function Ourservices() {
     return (
         <div className="bg-white rounded-lg p-8 shadow-md ">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 text-center md:text-start">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 text-center md:text-start italic">
                 Discover Unique Plate Numbers That Mach <br /> Your Style
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-4">

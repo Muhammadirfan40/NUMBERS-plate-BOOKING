@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import logo from "../../Images/Logo.png";
 import Backgroundimg from "../../Component/Backgroundimg/Backgroundimg"
 import NewToday from '../../Pages/NewToday/NewToday';
 import Ourservices from '../OurServices/Ourservices';
 import Feedbackus from '../Feedbackus/Feedbackus';
+import Footer from '../Footer/Footer';
 
 const HomePage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,31 +27,44 @@ const HomePage = () => {
                     <div className="max-w-7xl mx-auto flex items-center justify-between">
 
                         {/* Logo */}
-                        <div className="text-white font-bold text-xl">
+                        <div className="h-28 w-64">
                             <img src={logo} alt="logo" className='' />
                         </div>
 
-                        <div className='flex md:flex-col gap-2'>
+                        <div className='flex md:flex-col gap-2 mt-12'>
                             {/* Desktop Menu */}
-                            <div className="hidden md:flex space-x-4 text-black text-3xl font-normal">
+                            <div className="hidden md:flex gap-4 md:ga text-black text-3xl font-normal">
                                 <a href="#">NORMAL</a>
                                 <a href="#about" >SELVER</a>
                                 <a href="#services" >GOLDEN</a>
                                 <a href="#contact" >VIP</a>
 
+
                                 {/* Category Dropdown */}
                                 <div className="relative">
-                                    <button onClick={toggleCategoryDropdown} className="text-black">
+                                    <button
+                                        onClick={toggleCategoryDropdown}
+                                        className="text-black flex items-center gap-2"
+                                    >
                                         CATEGORY
+                                        <i className={`ri-arrow-down-s-line text-lg transform ${isCategoryOpen ? 'rotate-180' : ''}`}></i>
                                     </button>
                                     {isCategoryOpen && (
-                                        <div className="absolute left-0 mt-2 w-40 bg-white border border-gray-300 shadow-lg">
-                                            <a href="#category1" className="block px-4 py-2 text-black hover:bg-gray-100">Category 1</a>
-                                            <a href="#category2" className="block px-4 py-2 text-black hover:bg-gray-100">Category 2</a>
-                                            <a href="#category3" className="block px-4 py-2 text-black hover:bg-gray-100">Category 3</a>
+                                        <div className="absolute left-0 mt-2 w-40 bg-white border border-gray-300 shadow-lg z-10 text-xl">
+                                            <a href="#category1" className="block px-4 py-2 text-black hover:bg-gray-100">
+                                                Category 1
+                                            </a>
+                                            <a href="#category2" className="block px-4 py-2 text-black hover:bg-gray-100">
+                                                Category 2
+                                            </a>
+                                            <a href="#category3" className="block px-4 py-2 text-black hover:bg-gray-100">
+                                                Category 3
+                                            </a>
                                         </div>
                                     )}
                                 </div>
+
+
                             </div>
 
                             {/* Search Input */}
@@ -76,17 +91,18 @@ const HomePage = () => {
 
                         <div className='flex md:flex-col gap-2'>
 
-                            <div className='flex gap-2'>
-                                <button className='border border-black text-xl font-semibold py-2 px-3'>SELL +</button>
-                                <button className=' text-xl font-semibold py-2 px-3 bg-yellow-300'>Order</button>
+                            <div className='flex gap-6 mt-2 mb-8 justify-center'>
+                                <button className='border border-black rounded text-center items-center text-xl font-semibold px-2 py-1  '>SELL +</button>
+                                <button className=' rounded text-center items-center text-xl font-semibold px-2 py-1 bg-yellow-300'>Order</button>
                             </div>
 
-                            <div className='flex gap-2'>
-                                <button>  <i class="ri-heart-3-line text-xl "></i></button>
-                                <button><i class="ri-notification-line text-xl "></i></button>
-                                <button> <i class="ri-mail-fill text-xl "></i></button>
-                                <a href="" className='rounded border-black text-xl font-semibold py-2 px-3 bg-white'>Sign In</a>
+                            <div className='flex gap-4 justify-between'>
+                                <button>  <i class="ri-heart-3-line text-4xl"></i></button>
+                                <button><i class="ri-notification-line text-4xl "></i></button>
+                                <button> <i class="ri-mail-fill  text-4xl "></i></button>
+                                <Link to="/loginpage" className='rounded border-black text-xl  py-2 px-3 bg-white'>Sign In</Link>
                             </div>
+
                         </div>
 
 
@@ -141,6 +157,7 @@ const HomePage = () => {
                 <NewToday />
                 <Ourservices />
                 <Feedbackus />
+                <Footer />
 
             </div>
 

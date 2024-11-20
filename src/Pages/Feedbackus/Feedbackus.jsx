@@ -6,35 +6,39 @@ import google from '../../Images/google.png';
 // Reusable Testimonial Card Component
 const TestimonialCard = ({ name, username, date, review }) => {
   return (
-    <div className="flex flex-col items-center bg-white rounded-lg p-6 shadow-md w-80">
-      {/* Star Ratings */}
-      <div className="flex space-x-1 mb-4">
-        {[...Array(5)].map((_, index) => (
-          <img key={index} src={start} alt="Star" className="w-6 h-6" />
-        ))}
-      </div>
+    <>
+      <div className="flex flex-col items-center bg-white rounded-lg py-12 px-8  shadow-md ">
+        {/* Star Ratings */}
+        <div className="flex space-x-1 mb-4">
+          {[...Array(5)].map((_, index) => (
+            <img key={index} src={start} alt="Star" className="w-10 h-10 mb-6" />
+          ))}
+        </div>
 
-      {/* Profile Section */}
-      <div className="flex flex-col items-center">
-        <img
-          src={dpboy}
-          alt="Profile"
-          className="rounded-full w-12 h-12 mb-2"
-        />
-        <p className="text-sm font-semibold">{name}</p>
-        <p className="text-sm text-gray-500">
-          @{username} · {date}
-        </p>
-      </div>
+        {/* Profile Section */}
+        <div className="flex flex-col items-center">
+          <img
+            src={dpboy}
+            alt="Profile"
+            className="rounded-full w-24 h-24 mb-4"
+          />
+          <p className="text-xl font-semibold">{name}</p>
+          <p className="text-sm text-gray-500 mb-4" >
+            @{username} · {date}
+          </p>
+        </div>
 
-      {/* Google Logo */}
-      <div className="my-4">
-        <img src={google} alt="Google" className="w-10" />
-      </div>
+        {/* Google Logo */}
+        <div className="my-4">
+          <img src={google} alt="Google" className="w-16 h-16 mb-6" />
+        </div>
 
-      {/* Testimonial Text */}
-      <p className="text-center text-sm text-gray-700">{review}</p>
-    </div>
+        {/* Testimonial Text */}
+        <p className="text-center text-xl ">{review}</p>
+      </div>
+    </>
+
+
   );
 };
 
